@@ -1,0 +1,2452 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Pay-i Early Look API Documentation",
+        "description": "",
+        "version": "v1"
+    },
+    "paths": {
+        "/api/v1/proxy/anthropic/v1/messages": {
+            "post": {
+                "tags": [
+                    "Anthropic Requests"
+                ],
+                "summary": "Chat Completions (Messages)",
+                "parameters": [
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/anthropic/v1/messages\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/anthropic/v1/messages',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/azure.openai/openai/deployments/{depoymentName}/chat/completions": {
+            "post": {
+                "tags": [
+                    "Azure OpenAI Requests"
+                ],
+                "summary": "Chat Completions",
+                "parameters": [
+                    {
+                        "name": "depoymentName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/chat/completions\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/chat/completions',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/azure.openai/openai/deployments/{depoymentName}/embeddings": {
+            "post": {
+                "tags": [
+                    "Azure OpenAI Requests"
+                ],
+                "summary": "Embeddings",
+                "parameters": [
+                    {
+                        "name": "depoymentName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/embeddings\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/embeddings',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/azure.openai/openai/deployments/{depoymentName}/images/generations": {
+            "post": {
+                "tags": [
+                    "Azure OpenAI Requests"
+                ],
+                "summary": "Generations",
+                "parameters": [
+                    {
+                        "name": "depoymentName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/images/generations\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/azure.openai/openai/deployments/%7BdepoymentName%7D/images/generations',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}/tags": {
+            "get": {
+                "tags": [
+                    "Budget Tags"
+                ],
+                "summary": "Get the budget tags for a budget",
+                "operationId": "getBudgetTags",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"GET\", \"/api/v1/budgets/%7BbudgetId%7D/tags\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/tags',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Budget Tags"
+                ],
+                "summary": "Add new budget tags for a budget",
+                "operationId": "addBudgetTags",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "the list of tags to add",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"budget_tags\\\":[\\\"string\\\"]}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'Authorization': \"REPLACE_KEY_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/budgets/%7BbudgetId%7D/tags\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/tags',\n  headers: {'content-type': 'application/*+json', Authorization: 'REPLACE_KEY_VALUE'},\n  body: {budget_tags: ['string']},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Budget Tags"
+                ],
+                "summary": "Update budget tags for a budget",
+                "operationId": "updateBudgetTags",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "the list of tags to update",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"budget_tags\\\":[\\\"string\\\"]}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'Authorization': \"REPLACE_KEY_VALUE\"\n    }\n\nconn.request(\"PUT\", \"/api/v1/budgets/%7BbudgetId%7D/tags\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'PUT',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/tags',\n  headers: {'content-type': 'application/*+json', Authorization: 'REPLACE_KEY_VALUE'},\n  body: {budget_tags: ['string']},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Budget Tags"
+                ],
+                "summary": "Delete all budget tags for a budget",
+                "operationId": "deleteBudgetTags",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"DELETE\", \"/api/v1/budgets/%7BbudgetId%7D/tags\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'DELETE',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/tags',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}/tags/remove": {
+            "patch": {
+                "tags": [
+                    "Budget Tags"
+                ],
+                "summary": "Remove selected budget tags from a budget",
+                "operationId": "deleteSelectedBudgetTags",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTags"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"budget_tags\\\":[\\\"string\\\"]}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'Authorization': \"REPLACE_KEY_VALUE\"\n    }\n\nconn.request(\"PATCH\", \"/api/v1/budgets/%7BbudgetId%7D/tags/remove\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'PATCH',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/tags/remove',\n  headers: {'content-type': 'application/*+json', Authorization: 'REPLACE_KEY_VALUE'},\n  body: {budget_tags: ['string']},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets": {
+            "get": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Get all budgets for an application",
+                "operationId": "getBudgets",
+                "parameters": [
+                    {
+                        "name": "BudgetName",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Tags",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "PageNumber",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "PageSize",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "SortBy",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "SortAscending",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"GET\", \"/api/v1/budgets?BudgetName=SOME_STRING_VALUE&Tags=SOME_STRING_VALUE&PageNumber=SOME_INTEGER_VALUE&PageSize=SOME_INTEGER_VALUE&SortBy=SOME_STRING_VALUE&SortAscending=SOME_BOOLEAN_VALUE\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'http://undefinedundefined/api/v1/budgets',\n  qs: {\n    BudgetName: 'SOME_STRING_VALUE',\n    Tags: 'SOME_STRING_VALUE',\n    PageNumber: 'SOME_INTEGER_VALUE',\n    PageSize: 'SOME_INTEGER_VALUE',\n    SortBy: 'SOME_STRING_VALUE',\n    SortAscending: 'SOME_BOOLEAN_VALUE'\n  },\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Create a budget for an application",
+                "operationId": "createBudget",
+                "requestBody": {
+                    "description": "the budget data",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CreateBudget"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CreateBudget"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CreateBudget"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"budget_name\\\":\\\"string\\\",\\\"budget_tags\\\":[\\\"string\\\"],\\\"max\\\":0.1,\\\"budget_type\\\":1,\\\"base_cost_estimate\\\":1,\\\"budget_response_type\\\":1}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'Authorization': \"REPLACE_KEY_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/budgets\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/budgets',\n  headers: {'content-type': 'application/*+json', Authorization: 'REPLACE_KEY_VALUE'},\n  body: {\n    budget_name: 'string',\n    budget_tags: ['string'],\n    max: 0.1,\n    budget_type: 1,\n    base_cost_estimate: 1,\n    budget_response_type: 1\n  },\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}": {
+            "get": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Get a budget",
+                "operationId": "getBudget",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"GET\", \"/api/v1/budgets/%7BbudgetId%7D\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Update a budget for an application",
+                "operationId": "updateBudget",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "the budget data to update",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.UpdateBudget"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.UpdateBudget"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.BudgetManagement.Models.UpdateBudget"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"budget_name\\\":\\\"string\\\",\\\"max\\\":0.1}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'Authorization': \"REPLACE_KEY_VALUE\"\n    }\n\nconn.request(\"PUT\", \"/api/v1/budgets/%7BbudgetId%7D\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'PUT',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D',\n  headers: {'content-type': 'application/*+json', Authorization: 'REPLACE_KEY_VALUE'},\n  body: {budget_name: 'string', max: 0.1},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Delete a budget",
+                "operationId": "deleteBudget",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"DELETE\", \"/api/v1/budgets/%7BbudgetId%7D\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'DELETE',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}/metric": {
+            "get": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Get a budget's metrics",
+                "operationId": "getBudgetMetric",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetMetric"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetMetric"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetMetric"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"GET\", \"/api/v1/budgets/%7BbudgetId%7D/metric\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/metric',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}/history": {
+            "get": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Get a budget's history",
+                "operationId": "getBudgetHistory",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"GET\", \"/api/v1/budgets/%7BbudgetId%7D/history\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/history',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/budgets/{budgetId}/reset": {
+            "post": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Reset a budget",
+                "operationId": "resetBudget",
+                "parameters": [
+                    {
+                        "name": "budgetId",
+                        "in": "path",
+                        "description": "the unique budget id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = { 'Authorization': \"REPLACE_KEY_VALUE\" }\n\nconn.request(\"POST\", \"/api/v1/budgets/%7BbudgetId%7D/reset\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/budgets/%7BbudgetId%7D/reset',\n  headers: {Authorization: 'REPLACE_KEY_VALUE'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/ingest": {
+            "post": {
+                "tags": [
+                    "Ingest Requests"
+                ],
+                "summary": "Ingest units for a resource",
+                "parameters": [
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.IngestRequest"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.IngestRequest"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.IngestRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\npayload = \"{\\\"category\\\":\\\"string\\\",\\\"resource\\\":\\\"string\\\",\\\"units\\\":{\\\"input\\\":0,\\\"output\\\":0}}\"\n\nheaders = {\n    'content-type': \"application/*+json\",\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/ingest\", payload, headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/ingest',\n  headers: {\n    'content-type': 'application/*+json',\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  },\n  body: {category: 'string', resource: 'string', units: {input: 0, output: 0}},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/openai/v1/chat/completions": {
+            "post": {
+                "tags": [
+                    "OpenAI Requests"
+                ],
+                "summary": "Chat Completions",
+                "parameters": [
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/openai/v1/chat/completions\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/openai/v1/chat/completions',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/openai/v1/images/generations": {
+            "post": {
+                "tags": [
+                    "OpenAI Requests"
+                ],
+                "summary": "Image Generations",
+                "parameters": [
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/openai/v1/images/generations\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/openai/v1/images/generations',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        },
+        "/api/v1/proxy/openai/v1/embeddings": {
+            "post": {
+                "tags": [
+                    "OpenAI Requests"
+                ],
+                "summary": "Embeddings",
+                "parameters": [
+                    {
+                        "name": "xProxy-Budget-IDs",
+                        "in": "header",
+                        "description": "Comma separated list of budget ID strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "budgetId1, budgetId_2"
+                    },
+                    {
+                        "name": "xProxy-Request-Tags",
+                        "in": "header",
+                        "description": "Comma separated list of request tag strings",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "requestTag1, requestTag_2"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "207": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "Python + Python3",
+                        "source": "import http.client\n\nconn = http.client.HTTPConnection(\"undefinedundefined\")\n\nheaders = {\n    'xProxy-Budget-IDs': \"SOME_STRING_VALUE\",\n    'xProxy-Request-Tags': \"SOME_STRING_VALUE\"\n    }\n\nconn.request(\"POST\", \"/api/v1/proxy/openai/v1/embeddings\", headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(\"utf-8\"))"
+                    },
+                    {
+                        "lang": "Node + Request",
+                        "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'http://undefinedundefined/api/v1/proxy/openai/v1/embeddings',\n  headers: {\n    'xProxy-Budget-IDs': 'SOME_STRING_VALUE',\n    'xProxy-Request-Tags': 'SOME_STRING_VALUE'\n  }\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "detail": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instance": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": {}
+            },
+            "PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList": {
+                "type": "object",
+                "properties": {
+                    "currentPage": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "readOnly": true
+                    },
+                    "hasPreviousPage": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "hasNextPage": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
+                        },
+                        "nullable": true
+                    },
+                    "request_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.Budget": {
+                "type": "object",
+                "properties": {
+                    "budget_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "budget_name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "budget_tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "max": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "spent": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "overrun": {
+                        "type": "number",
+                        "format": "double",
+                        "readOnly": true
+                    },
+                    "currency": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "successful_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "blocked_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "total_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "budget_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
+                    },
+                    "base_cost_estimate": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
+                    },
+                    "budget_response_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
+                    },
+                    "budget_creation_timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "budget_update_timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetHistory": {
+                "type": "object",
+                "properties": {
+                    "budget_id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "budget_name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reset_date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "budget_tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "budget_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
+                    },
+                    "base_cost_estimate": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
+                    },
+                    "budget_response_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
+                    },
+                    "max": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "spent": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_input_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_input_overrun_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_output_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_output_overrun_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_total_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_cost_total_overrun_base": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "totals_requests_successful": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totals_requests_blocked": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totals_requests_failed": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totals_requests_exceeded": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "totals_requests_total": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetHistoryListResponse": {
+                "type": "object",
+                "properties": {
+                    "request_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "budget_history_list": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistory"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetHistoryResponse": {
+                "type": "object",
+                "properties": {
+                    "request_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "budget_history": {
+                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistory"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetMetric": {
+                "type": "object",
+                "properties": {
+                    "total_successful_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "total_blocked_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "total_requests": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "total_amount_spent": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetResponse": {
+                "type": "object",
+                "properties": {
+                    "request_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "budget": {
+                        "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetTags": {
+                "required": [
+                    "budget_tags"
+                ],
+                "type": "object",
+                "properties": {
+                    "budget_tags": {
+                        "minItems": 1,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.BudgetTagsResponse": {
+                "type": "object",
+                "properties": {
+                    "tagId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "tagName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "createdOn": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.CreateBudget": {
+                "required": [
+                    "budget_name"
+                ],
+                "type": "object",
+                "properties": {
+                    "budget_name": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "budget_tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true
+                    },
+                    "max": {
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "budget_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
+                    },
+                    "base_cost_estimate": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
+                    },
+                    "budget_response_type": {
+                        "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.DefaultResponse": {
+                "type": "object",
+                "properties": {
+                    "request_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.BudgetManagement.Models.UpdateBudget": {
+                "required": [
+                    "budget_name"
+                ],
+                "type": "object",
+                "properties": {
+                    "budget_name": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                    },
+                    "max": {
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "type": "number",
+                        "format": "double"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate": {
+                "enum": [
+                    1
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType": {
+                "enum": [
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "PayI.Common.Data.BudgetManagement.Enums.BudgetType": {
+                "enum": [
+                    1,
+                    2
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "PayI.Common.Models.ApiRouter.IngestRequest": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "resource": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "units": {
+                        "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.Units"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "PayI.Common.Models.ApiRouter.Units": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "output": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "OpenAI Requests"
+        },
+        {
+            "name": "Azure OpenAI Requests"
+        },
+        {
+            "name": "Anthropic Requests"
+        },
+        {
+            "name": "Budgets"
+        },
+        {
+            "name": "Budget Tags"
+        },
+        {
+            "name": "Ingest Requests"
+        }
+    ]
+}
