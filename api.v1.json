@@ -39,7 +39,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -88,17 +88,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -152,7 +152,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -201,17 +201,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -265,7 +265,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -314,17 +314,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -378,7 +378,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -427,17 +427,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -477,22 +477,51 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -556,22 +585,51 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -635,22 +693,51 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -694,22 +781,51 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -775,22 +891,51 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
+                  }
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -871,22 +1016,42 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -941,22 +1106,42 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1002,22 +1187,42 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1081,22 +1286,42 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1140,22 +1365,42 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1201,22 +1446,42 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1259,7 +1524,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "requestBody": {
@@ -1287,17 +1552,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.SuccessfulProxyResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.SuccessfulProxyResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.SuccessfulProxyResult"
                 }
               }
             }
@@ -1307,17 +1572,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
@@ -1363,7 +1628,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -1412,17 +1677,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -1468,7 +1733,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -1517,17 +1782,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -1573,7 +1838,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "requestTag1, requestTag_2"
+            "example": "requestTag1, request_tag_2"
           }
         ],
         "responses": {
@@ -1622,17 +1887,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyApiError"
                 }
               }
             }
@@ -1648,6 +1913,180 @@
   },
   "components": {
     "schemas": {
+      "PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hasPreviousPage": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasNextPage": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
+            },
+            "nullable": true
+          },
+          "request_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.Budget": {
+        "type": "object",
+        "properties": {
+          "budget_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "budget_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "budget_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "max": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "budget_type": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
+          },
+          "base_cost_estimate": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
+          },
+          "budget_response_type": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
+          },
+          "budget_creation_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totals": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.TotalCostData"
+          },
+          "budget_update_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.BudgetHistory": {
+        "type": "object",
+        "properties": {
+          "budget_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "budget_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "reset_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "budget_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "budget_type": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
+          },
+          "base_cost_estimate": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
+          },
+          "budget_response_type": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
+          },
+          "max": {
+            "type": "number",
+            "format": "double"
+          },
+          "totals": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Totals"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.BudgetHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "budget_history": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.BudgetResponse": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "budget": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
+          }
+        },
+        "additionalProperties": false
+      },
       "PayI.BudgetManagement.Models.BudgetTags": {
         "required": [
           "budget_tags"
@@ -1660,6 +2099,53 @@
             "items": {
               "type": "string"
             }
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.BudgetTagsResponse": {
+        "type": "object",
+        "properties": {
+          "tagId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tagName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.CostData": {
+        "type": "object",
+        "properties": {
+          "inputCost": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
+          },
+          "outputCost": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
+          },
+          "totalCost": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.CostDataDetails": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "type": "number",
+            "format": "double"
+          },
+          "overrun_base": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -1700,6 +2186,62 @@
         },
         "additionalProperties": false
       },
+      "PayI.BudgetManagement.Models.DefaultResponse": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.RequestsData": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blocked": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exceeded": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.BudgetManagement.Models.TotalCostData": {
+        "type": "object",
+        "properties": {
+          "cost": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostData"
+          },
+          "requests": {
+            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.RequestsData"
+          }
+        },
+        "additionalProperties": false
+      },
       "PayI.BudgetManagement.Models.UpdateBudget": {
         "required": [
           "budget_name"
@@ -1716,6 +2258,88 @@
             "exclusiveMinimum": true,
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Data.BudgetManagement.Entities.Cost": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
+          },
+          "output": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
+          },
+          "total": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Data.BudgetManagement.Entities.CostDetail": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "type": "number",
+            "format": "double"
+          },
+          "billed": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "overrunBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "overrunBilled": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "revenue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Data.BudgetManagement.Entities.Requests": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blocked": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "failed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exceeded": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Data.BudgetManagement.Entities.Totals": {
+        "type": "object",
+        "properties": {
+          "cost": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Cost"
+          },
+          "requests": {
+            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Requests"
           }
         },
         "additionalProperties": false
@@ -1751,9 +2375,6 @@
           "message": {
             "type": "string",
             "nullable": true
-          },
-          "proxy_result": {
-            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
           }
         },
         "additionalProperties": false
@@ -1774,7 +2395,7 @@
             "nullable": true
           },
           "proxy_result": {
-            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.SuccessfulProxyResult"
           }
         },
         "additionalProperties": false
@@ -1812,7 +2433,7 @@
             "nullable": true
           },
           "proxy_result": {
-            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.SuccessfulProxyResult"
           }
         },
         "additionalProperties": false
@@ -1831,7 +2452,7 @@
         },
         "additionalProperties": false
       },
-      "PayI.Common.Models.BaseApiError": {
+      "PayI.Common.Models.ProxyApiError": {
         "type": "object",
         "properties": {
           "error_code": {
@@ -1842,6 +2463,9 @@
           "message": {
             "type": "string",
             "nullable": true
+          },
+          "proxy_result": {
+            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.FailedProxyResult"
           }
         },
         "additionalProperties": false
@@ -1851,7 +2475,8 @@
         "properties": {
           "state": {
             "type": "string",
-            "nullable": true
+            "nullable": true,
+            "example": "OK"
           }
         },
         "additionalProperties": false
@@ -1866,7 +2491,7 @@
         },
         "additionalProperties": false
       },
-      "PayI.Common.Models.ProxyResult.ProxyResult": {
+      "PayI.Common.Models.ProxyResult.FailedProxyResult": {
         "type": "object",
         "properties": {
           "request_id": {
@@ -1878,24 +2503,36 @@
             "items": {
               "type": "string"
             },
-            "nullable": true
+            "nullable": true,
+            "example": [
+              "requestTag1",
+              "request_tag_2"
+            ]
           },
           "budgets": {
             "type": "object",
             "additionalProperties": {
               "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.BudgetStatus"
             },
-            "nullable": true
-          },
-          "cost": {
-            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.RequestCost"
+            "nullable": true,
+            "example": {
+              "budgetId1": {
+                "State": "OK"
+              },
+              "budgetId_2": {
+                "State": "Exceeeded"
+              }
+            }
           },
           "blocked_budget_ids": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "nullable": true
+            "nullable": true,
+            "example": [
+              "budgetId_2"
+            ]
           }
         },
         "additionalProperties": false
@@ -1915,6 +2552,45 @@
           },
           "total": {
             "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.CostDetails"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Models.ProxyResult.SuccessfulProxyResult": {
+        "type": "object",
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "request_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "example": [
+              "requestTag1",
+              "request_tag_2"
+            ]
+          },
+          "budgets": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.BudgetStatus"
+            },
+            "nullable": true,
+            "example": {
+              "budgetId1": {
+                "State": "OK"
+              },
+              "budgetId_2": {
+                "State": "Exceeeded"
+              }
+            }
+          },
+          "cost": {
+            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.RequestCost"
           }
         },
         "additionalProperties": false
