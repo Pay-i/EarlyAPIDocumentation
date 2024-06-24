@@ -44,14 +44,34 @@
         ],
         "responses": {
           "200": {
-            "description": "one\none\none\n",
+            "description": "Success",
             "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicResponse"
+                }
+              },
               "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicResponse"
                 }
               },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicResponse"
+                }
+              },
+              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicResponse"
                 }
@@ -66,70 +86,27 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -187,12 +164,32 @@
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
@@ -204,68 +201,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -323,12 +277,32 @@
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
@@ -340,68 +314,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -459,12 +390,32 @@
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
@@ -476,93 +427,49 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
     },
-    "/api/v1/budgets/{budgetId}/tags": {
+    "/api/v1/budgets/{budget_id}/tags": {
       "get": {
         "tags": [
           "Budget Tags"
         ],
-        "summary": "Get budget tags for a budget",
+        "summary": "Get a Budget's Tags",
         "operationId": "getBudgetTags",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -570,39 +477,36 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -610,22 +514,21 @@
         "tags": [
           "Budget Tags"
         ],
-        "summary": "Add new budget tags for a budget",
+        "summary": "Add Tags to a Budget",
         "operationId": "addBudgetTags",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -633,7 +536,7 @@
           }
         ],
         "requestBody": {
-          "description": "the list of tags to add",
+          "description": "Budget Tags to add",
           "content": {
             "application/json": {
               "schema": {
@@ -653,39 +556,36 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -693,22 +593,21 @@
         "tags": [
           "Budget Tags"
         ],
-        "summary": "Update budget tags for a budget",
+        "summary": "Update the Budget's Tags",
         "operationId": "updateBudgetTags",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -716,7 +615,7 @@
           }
         ],
         "requestBody": {
-          "description": "the list of tags to update",
+          "description": "Budget Tags to update",
           "content": {
             "application/json": {
               "schema": {
@@ -736,39 +635,36 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -776,22 +672,21 @@
         "tags": [
           "Budget Tags"
         ],
-        "summary": "Delete all budget tags for a budget",
+        "summary": "Delete the Budget's Tags",
         "operationId": "deleteBudgetTags",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -799,64 +694,60 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       }
     },
-    "/api/v1/budgets/{budgetId}/tags/remove": {
+    "/api/v1/budgets/{budget_id}/tags/remove": {
       "patch": {
         "tags": [
           "Budget Tags"
         ],
-        "summary": "Remove selected budget tags from a budget",
+        "summary": "Remove Tags from the Budget",
         "operationId": "deleteSelectedBudgetTags",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -864,7 +755,7 @@
           }
         ],
         "requestBody": {
-          "description": "",
+          "description": "Budget Tags to remove",
           "content": {
             "application/json": {
               "schema": {
@@ -884,39 +775,36 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetTagsResponse"
-                  }
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       }
@@ -926,9 +814,17 @@
         "tags": [
           "Budgets"
         ],
-        "summary": "Get all budgets for an application",
+        "summary": "Get all Budgets",
         "operationId": "getBudgets",
         "parameters": [
+          {
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "BudgetName",
             "in": "query",
@@ -972,42 +868,39 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -1015,21 +908,20 @@
         "tags": [
           "Budgets"
         ],
-        "summary": "Create a budget for an application",
+        "summary": "Create a Budget",
         "operationId": "createBudget",
         "parameters": [
           {
-            "name": "xProxy-Forward-Authorization",
+            "name": "xProxy-Application-Key",
             "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
-            "required": true,
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           }
         ],
         "requestBody": {
-          "description": "the budget data",
+          "description": "Budget configuration",
           "content": {
             "application/json": {
               "schema": {
@@ -1049,55 +941,60 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       }
     },
-    "/api/v1/budgets/{budgetId}": {
+    "/api/v1/budgets/{budget_id}": {
       "get": {
         "tags": [
           "Budgets"
         ],
-        "summary": "Get a budget",
+        "summary": "Get a Budget's details",
         "operationId": "getBudget",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -1105,30 +1002,36 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -1136,22 +1039,21 @@
         "tags": [
           "Budgets"
         ],
-        "summary": "Update a budget for an application",
+        "summary": "Update a Budget",
         "operationId": "updateBudget",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -1159,7 +1061,7 @@
           }
         ],
         "requestBody": {
-          "description": "the budget data to update",
+          "description": "Budget configuration to update",
           "content": {
             "application/json": {
               "schema": {
@@ -1179,30 +1081,36 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       },
@@ -1210,22 +1118,21 @@
         "tags": [
           "Budgets"
         ],
-        "summary": "Delete a budget",
+        "summary": "Delete a Budget",
         "operationId": "deleteBudget",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -1233,111 +1140,60 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.DefaultResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
-            }
-          }
-        },
-        "security": [
-          {
-            "Pay-I API Key": []
-          }
-        ]
-      }
-    },
-    "/api/v1/budgets/{budgetId}/history": {
-      "get": {
-        "tags": [
-          "Budgets"
-        ],
-        "summary": "Get a budget's history",
-        "operationId": "getBudgetHistory",
-        "parameters": [
-          {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           },
-          {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryListResponse"
-                }
-              }
-            }
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       }
     },
-    "/api/v1/budgets/{budgetId}/reset": {
+    "/api/v1/budgets/{budget_id}/reset": {
       "post": {
         "tags": [
           "Budgets"
         ],
-        "summary": "Reset a budget",
+        "summary": "Reset the Budget",
         "operationId": "resetBudget",
         "parameters": [
           {
-            "name": "budgetId",
-            "in": "path",
-            "description": "the unique budget id",
-            "required": true,
+            "name": "xProxy-Application-Key",
+            "in": "header",
+            "description": "Application Key",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
+            "name": "budget_id",
+            "in": "path",
+            "description": "Budget Id",
             "required": true,
             "schema": {
               "type": "string"
@@ -1345,30 +1201,36 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistoryResponse"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
+          },
+          {
+            "Backend_JWT": []
           }
         ]
       }
@@ -1378,7 +1240,7 @@
         "tags": [
           "Ingest Requests"
         ],
-        "summary": "Process an ingest request",
+        "summary": "Ingest a request",
         "operationId": "requests.Ingest",
         "parameters": [
           {
@@ -1421,19 +1283,19 @@
         },
         "responses": {
           "200": {
-            "description": "two\ntwo \ntwo\n",
+            "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
                 }
               },
               "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
-                }
-              },
-              "text/plain": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
                 }
@@ -1443,70 +1305,27 @@
           "400": {
             "description": "Bad Request",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.BaseApiError"
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -1549,134 +1368,6 @@
         ],
         "responses": {
           "200": {
-            "description": "two\ntwo \ntwo\n",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
-          }
-        },
-        "security": [
-          {
-            "Pay-I API Key": []
-          }
-        ]
-      }
-    },
-    "/api/v1/proxy/openai/v1/images/generations": {
-      "post": {
-        "tags": [
-          "OpenAI Requests"
-        ],
-        "summary": "Generations",
-        "operationId": "requests.OpenAI.ImagesGenerationsAPIV1",
-        "parameters": [
-          {
-            "name": "xProxy-Forward-Authorization",
-            "in": "header",
-            "description": "API Key or JWT to authorize with the downstream request API.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "xProxy-Budget-IDs",
-            "in": "header",
-            "description": "Comma separated list of budget ID strings",
-            "schema": {
-              "type": "string"
-            },
-            "example": "budgetId1, budgetId_2"
-          },
-          {
-            "name": "xProxy-Request-Tags",
-            "in": "header",
-            "description": "Comma separated list of request tag strings",
-            "schema": {
-              "type": "string"
-            },
-            "example": "requestTag1, requestTag_2"
-          }
-        ],
-        "responses": {
-          "200": {
             "description": "Success",
             "content": {
               "application/json": {
@@ -1684,12 +1375,32 @@
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
@@ -1701,68 +1412,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "207": {
-            "description": "Success"
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -1812,12 +1480,32 @@
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
               "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
@@ -1829,68 +1517,130 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
+          }
+        },
+        "security": [
+          {
+            "Pay_I_API_Key": []
+          }
+        ]
+      }
+    },
+    "/api/v1/proxy/openai/v1/images/generations": {
+      "post": {
+        "tags": [
+          "OpenAI Requests"
+        ],
+        "summary": "Generations",
+        "operationId": "requests.OpenAI.ImagesGenerationsAPIV1",
+        "parameters": [
+          {
+            "name": "xProxy-Forward-Authorization",
+            "in": "header",
+            "description": "API Key or JWT to authorize with the downstream request API.",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
-          "404": {
-            "description": "Not Found",
+          {
+            "name": "xProxy-Budget-IDs",
+            "in": "header",
+            "description": "Comma separated list of budget ID strings",
+            "schema": {
+              "type": "string"
+            },
+            "example": "budgetId1, budgetId_2"
+          },
+          {
+            "name": "xProxy-Request-Tags",
+            "in": "header",
+            "description": "Comma separated list of request tag strings",
+            "schema": {
+              "type": "string"
+            },
+            "example": "requestTag1, requestTag_2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               },
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
                 }
               }
             }
           },
           "207": {
-            "description": "Success"
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayI.Common.Models.ApiError"
+                }
+              }
+            }
           }
         },
         "security": [
           {
-            "Pay-I API Key": []
+            "Pay_I_API_Key": []
           }
         ]
       }
@@ -1898,228 +1648,6 @@
   },
   "components": {
     "schemas": {
-      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "detail": {
-            "type": "string",
-            "nullable": true
-          },
-          "instance": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": {}
-      },
-      "PayI.BudgetManagement.Models.ApiQueries.PagedBudgetList": {
-        "type": "object",
-        "properties": {
-          "currentPage": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalPages": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "hasPreviousPage": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "hasNextPage": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
-            },
-            "nullable": true
-          },
-          "request_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.Budget": {
-        "type": "object",
-        "properties": {
-          "budget_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "budget_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "budget_tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "max": {
-            "type": "number",
-            "format": "double"
-          },
-          "currency": {
-            "type": "string",
-            "nullable": true
-          },
-          "budget_type": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
-          },
-          "base_cost_estimate": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
-          },
-          "budget_response_type": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
-          },
-          "budget_creation_timestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "totals": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.TotalCostData"
-          },
-          "budget_update_timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.BudgetHistory": {
-        "type": "object",
-        "properties": {
-          "budget_id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "budget_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "reset_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "budget_tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "budget_type": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetType"
-          },
-          "base_cost_estimate": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BaseCostEstimate"
-          },
-          "budget_response_type": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Enums.BudgetResponseType"
-          },
-          "max": {
-            "type": "number",
-            "format": "double"
-          },
-          "totals": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Totals"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.BudgetHistoryListResponse": {
-        "type": "object",
-        "properties": {
-          "request_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "budget_history_list": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistory"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.BudgetHistoryResponse": {
-        "type": "object",
-        "properties": {
-          "request_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "budget_history": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.BudgetHistory"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.BudgetResponse": {
-        "type": "object",
-        "properties": {
-          "request_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "budget": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.Budget"
-          }
-        },
-        "additionalProperties": false
-      },
       "PayI.BudgetManagement.Models.BudgetTags": {
         "required": [
           "budget_tags"
@@ -2132,53 +1660,6 @@
             "items": {
               "type": "string"
             }
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.BudgetTagsResponse": {
-        "type": "object",
-        "properties": {
-          "tagId": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "tagName": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdOn": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.CostData": {
-        "type": "object",
-        "properties": {
-          "inputCost": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
-          },
-          "outputCost": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
-          },
-          "totalCost": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostDataDetails"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.CostDataDetails": {
-        "type": "object",
-        "properties": {
-          "base": {
-            "type": "number",
-            "format": "double"
-          },
-          "overrun_base": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false
@@ -2219,62 +1700,6 @@
         },
         "additionalProperties": false
       },
-      "PayI.BudgetManagement.Models.DefaultResponse": {
-        "type": "object",
-        "properties": {
-          "request_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.RequestsData": {
-        "type": "object",
-        "properties": {
-          "successful": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "blocked": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "exceeded": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "failed": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.BudgetManagement.Models.TotalCostData": {
-        "type": "object",
-        "properties": {
-          "cost": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.CostData"
-          },
-          "requests": {
-            "$ref": "#/components/schemas/PayI.BudgetManagement.Models.RequestsData"
-          }
-        },
-        "additionalProperties": false
-      },
       "PayI.BudgetManagement.Models.UpdateBudget": {
         "required": [
           "budget_name"
@@ -2291,83 +1716,6 @@
             "exclusiveMinimum": true,
             "type": "number",
             "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.Common.Data.BudgetManagement.Entities.Cost": {
-        "type": "object",
-        "properties": {
-          "input": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
-          },
-          "output": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
-          },
-          "total": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.CostDetail"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.Common.Data.BudgetManagement.Entities.CostDetail": {
-        "type": "object",
-        "properties": {
-          "base": {
-            "type": "number",
-            "format": "double"
-          },
-          "billed": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "overrunBase": {
-            "type": "number",
-            "format": "double"
-          },
-          "overrunBilled": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.Common.Data.BudgetManagement.Entities.Requests": {
-        "type": "object",
-        "properties": {
-          "successful": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "blocked": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "failed": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "exceeded": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PayI.Common.Data.BudgetManagement.Entities.Totals": {
-        "type": "object",
-        "properties": {
-          "cost": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Cost"
-          },
-          "requests": {
-            "$ref": "#/components/schemas/PayI.Common.Data.BudgetManagement.Entities.Requests"
           }
         },
         "additionalProperties": false
@@ -2391,6 +1739,24 @@
           "Liberal"
         ],
         "type": "string"
+      },
+      "PayI.Common.Models.ApiError": {
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "proxy_result": {
+            "$ref": "#/components/schemas/PayI.Common.Models.ProxyResult.ProxyResult"
+          }
+        },
+        "additionalProperties": false
       },
       "PayI.Common.Models.ApiRouter.AnthropicResponse": {
         "type": "object",
@@ -2461,6 +1827,21 @@
           "output": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Models.BaseApiError": {
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2540,13 +1921,13 @@
       }
     },
     "securitySchemes": {
-      "Backend JWT": {
+      "Backend_JWT": {
         "type": "apiKey",
         "description": "JWT for direct backend access. Example: \"Bearer {jwt}\"",
         "name": "Authorization",
         "in": "header"
       },
-      "Pay-I API Key": {
+      "Pay_I_API_Key": {
         "type": "apiKey",
         "description": "Pay-I API Key. Example: \"{apikey}\"",
         "name": "Authorization",
