@@ -42,6 +42,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.AnthropicRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -155,6 +175,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -268,6 +308,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -381,6 +441,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1631,6 +1711,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1736,6 +1836,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -1841,6 +1961,26 @@
             "example": "requestTag1, request_tag_2"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.OpenAIRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -2379,6 +2519,16 @@
         },
         "additionalProperties": false
       },
+      "PayI.Common.Models.ApiRouter.AnthropicRequest": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PayI.Common.Models.ApiRouter.AnthropicResponse": {
         "type": "object",
         "properties": {
@@ -2413,6 +2563,16 @@
           },
           "units": {
             "$ref": "#/components/schemas/PayI.Common.Models.ApiRouter.Units"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayI.Common.Models.ApiRouter.OpenAIRequest": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
